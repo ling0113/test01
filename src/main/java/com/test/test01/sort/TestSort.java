@@ -45,7 +45,10 @@ public class TestSort {
         // (2)倒序排列
         //Collections.reverse(list);
         // (3)输出list
-        log.info("排序后：" + list);
+        //log.info("排序后：" + list);
+        //删除元素
+        list.removeIf(s->"张三".equals(s.getName()));
+        System.out.println(list);
 
     }
 }
