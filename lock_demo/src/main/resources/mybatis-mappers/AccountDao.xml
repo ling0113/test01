@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lock_demo.lock.dao.AccountDao">
+  <resultMap id="BaseResultMap" type="com.lock_demo.lock.entity.Account">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="deposit" jdbcType="DECIMAL" property="deposit" />
+    <result column="version" jdbcType="INTEGER" property="version" />
+  </resultMap>
+  <update id="updateDeposit">
+     update account
+        set deposit=#{deposit}
+        where id = #{id}
+  </update>
+  <update id="updateDepositWithVersion">
+    update account
+        set deposit=#{deposit}
+        where id = #{id}
+        and version = #{version}
+  </update>
+  <select id="selectByIdForUpdate" resultType="com.lock_demo.lock.entity.Account">
+    select * from account
+    where id = #{id} for update
+  </select>
+  <select id="selectAlls" resultType="com.lock_demo.lock.entity.Account">
+    select * from account
+  </select>
+  <select id="selectById" resultType="com.lock_demo.lock.entity.Account">
+    select * from account
+    where id = #{id}
+  </select>
+</mapper>

@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://ling07.top:3306/user_db?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    password: lgr123456
+    username: root
+
+mybatis:
+  mapper-locations: classpath:mybatis-mappers/*Dao.xml
+  type-aliases-package: com.lock2_demo.entity
+

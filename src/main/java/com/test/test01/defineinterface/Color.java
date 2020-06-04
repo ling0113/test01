@@ -16,6 +16,6 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 public @interface Color {
 
-    String value() default "Color";
+    String value() default "a";
 
 }

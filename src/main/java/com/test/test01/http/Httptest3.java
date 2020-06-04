@@ -31,6 +31,7 @@ public class Httptest3 {
     public static void main(String[] args) throws Exception {
         //获取token
         String accessToken = getAccessToken();
+        System.out.println(accessToken);
         //读取顶级部门id
         //int departmentId = getDepartment(accessToken);
         //查询全部人员
@@ -69,13 +70,9 @@ public class Httptest3 {
         HttpUser httpUser = JSON.toJavaObject(json, HttpUser.class);
         List<UserList> userlist = httpUser.getUserlist();
         List<UserList> collect = new ArrayList<>();
-        //collect = userlist.stream().filter(u -> u.getStatus() == 1).collect(Collectors.toList());
+        collect = userlist.stream().filter(u -> u.getStatus() == 1).collect(Collectors.toList());
+        System.out.println(collect);
 
-
-
-        int size = collect.size();
-
-        System.out.println(size);
 
     }
 
